@@ -55,6 +55,8 @@ package classes.Items
 		public const PLATRNG:Jewelry = new Jewelry("PlatRng", "Plat Ring", "platinum ring", "a shining platinum ring", 0, 0, 1000, "This shining ring is made of platinum, one of the rare precious metals. It looks expensive! \n\nType: Jewelry (Ring) \nBase value: 1,000","Ring");
 		public const SILVRNG:Jewelry = new Jewelry("SilvRng", "Silver Ring", "silver ring", "a normal silver ring", 0, 0, 200, "This ring looks like it's made of silver. \n\nType: Jewelry (Ring) \nBase value: 200","Ring");
 		
+		//Other
+		public const WITCHHAT:Jewelry = new Jewelry("WtchHat", "Witch's Hat", "witch's hat", "a brimmed, pointed hat with a slight zig zag shape", 0, 0, 150, "This odd hat is bewitchingly appealing, yet seems to be just for show. \n\nType:Accessory (Hat) \nBase Value: 150","Hat");
 		/*private static function mk(id:String,shortName:String,name:String,longName:String,effectId:Number,effectMagnitude:Number,value:Number,description:String,type:String,perk:String=""):Jewelry {
 			return new Jewelry(id,shortName,name,longName,effectId,effectMagnitude,value,description,type,perk);
 		}*/

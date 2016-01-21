@@ -392,7 +392,7 @@
 					"narrow ",
 					"thin "];
 				description = randomChoice(options);
-				if (i_character.thickness < 30) {
+				if (i_character.thickness >= 30) {
 					if (rand(2) == 0) description = "slightly-flared ";
 					else description = "curved ";
 				}
@@ -401,7 +401,7 @@
 				options = ["well-formed ",
 					"pleasant "];
 				description = randomChoice(options);
-				if (i_character.thickness < 30) {
+				if (i_character.thickness >= 30) {
 					if (rand(2) == 0) description = "flared ";
 					else description = "curvy ";
 				}

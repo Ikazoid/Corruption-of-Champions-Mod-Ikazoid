@@ -53,6 +53,7 @@ package classes
 			[ "Siveen", customSiveen, true, "You are a literal angel from beyond, and you take the place of a vilage's champion for your own reasons..." ],
 			[ "Tyriana", customTyriana, true, "Your many, posh tits, incredible fertility, and well-used cunt made you more popular than the village bicycle.  With your cat-like ears, paws, and tail, you certainly had a feline appeal.  It's time to see how you fare in the next chapter of your life." ],
 			[ "Vahdunbrii", customVahdunbrii, true, "You're something of a powerhouse, and you wager that between your odd mutations, power strong enough to threaten the village order, and talents, you're the natural choice to send through the portal." ],
+			[ "Valexa", customValexa, true, "You are a secretive, talented, and artificially young witch who has infiltrated Ingnam and deceived the inhabitants into \"choosing\" you as the next champion. Well studied in the void and harboring some unusual fetishes, you have long dreamt of entering the demon realm and beginning your unwholesome escapades." ],
 		]
 		
 		private function customAnnetta():void {
@@ -1979,6 +1980,80 @@ package classes
 			player.gems += 15+ rand(55);
 			
 			outputText("Your body is wrecked by your own experiments with otherwordly transformation items, and now you have no more money to buy any more from smugglers... But you would make your body as strong as your will. Or die trying.");
+		}
+		
+		private function customValexa():void {
+			// unbirthing fetish
+			// intimate piercings
+			// small but normal body. subject to grow if magic is used.
+			// unique magic (unbirthing mechanic)
+			outputText("You are a secretive, talented, and artificially young witch who has infiltrated Ingnam and manipulated the inhabitants into \"choosing\" you as the next champion. Well studied in the void and harboring some unusual fetishes, you have long dreamt of entering the demon realm and beginning your unwholesome escapades.");
+
+			player.setWeapon(weapons.W_STAFF);
+			player.setArmor(armors.M_ROBES);
+			player.setJewelry(jewelries.WITCHHAT);
+			player.setUndergarment(UndergarmentLib.NOTHING, 0);
+			player.setUndergarment(UndergarmentLib.NOTHING, 1);
+			player.itemSlot1.setItemAndQty(consumables.B__BOOK, 2);
+			
+			player.createStatusAffect(StatusAffects.KnowsArouse, 0, 0, 0, 0);
+			player.createStatusAffect(StatusAffects.KnowsBlind, 0, 0, 0, 0);
+			
+			player.createPerk(PerkLib.Pervert, 0.25, 0, 0, 0);
+			player.createPerk(PerkLib.Smart, 0.25, 0, 0, 0);
+			
+			player.createPerk(PerkLib.Channeling, 0, 0, 0, 0);
+			player.createPerk(PerkLib.StaffChanneling, 0, 0, 0, 0);
+			player.createPerk(PerkLib.Mage, 0, 0, 0, 0);
+			
+			player.createPerk(PerkLib.HistoryScholar, 0, 0, 0, 0);
+	
+			player.createBreastRow();
+			player.createVagina();
+			player.vaginas[0].vaginalWetness = VAGINA_WETNESS_NORMAL;
+			player.breastRows[0].breastRating = 1;
+			player.nippleLength = .2;
+			player.clitLength = .3;
+			player.fertility = 10;
+			player.gender = 2;
+			player.hipRating = 2;
+			player.buttRating = 2;
+			player.str = 8;
+			player.tou = 9;
+			player.spe = 18;
+			player.inte = 73;
+			player.sens = 41;
+			player.lib = 40;
+			player.cor = 76;
+			kGAMECLASS.notes = "No Notes Available.";
+			player.HP = kGAMECLASS.maxHP();
+			player.skinType = SKIN_TYPE_PLAIN;
+			player.faceType = FACE_HUMAN;
+			player.tailType = TAIL_TYPE_NONE;
+			player.tongueType = TONUGE_HUMAN;
+			player.femininity = 80;
+			player.beardLength = 0;
+			player.beardStyle = 0;
+			player.tone = 10;
+			player.thickness = 10;
+			player.skinDesc = "skin";
+			player.skinTone = "light";
+			player.hairColor = "brown";
+			player.hairLength=6;
+			player.balls = 0;
+			player.cumMultiplier = 1;
+			player.ballSize = 0;
+			player.hoursSinceCum = 0;
+			player.ass.analLooseness = 0;
+			player.ass.analWetness = 0;
+			player.ass.fullness = 0;
+			player.fatigue = 0;
+			player.horns = 0;
+			player.tallness = 59;
+			player.tailVenom = 0;
+			player.tailRecharge = 0;
+			player.wingType = WING_TYPE_NONE;
+			player.wingDesc = "non-existant";
 		}
 		
 	}

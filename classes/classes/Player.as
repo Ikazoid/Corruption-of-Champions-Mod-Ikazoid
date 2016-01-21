@@ -294,10 +294,6 @@ use namespace kGAMECLASS;
 			if(findStatusAffect(StatusAffects.Berzerking) >= 0) {
 				armorDef = 0;
 			}
-			//Berzerking+Cold Fury
-			if(findStatusAffect(StatusAffects.Berzerking) >= 0 && findPerk(PerkLib.ColdFury) >= 0) {
-				armorDef += 1;
-			}
 			if(kGAMECLASS.monster.findStatusAffect(StatusAffects.TailWhip) >= 0) {
 				armorDef -= kGAMECLASS.monster.statusAffectv1(StatusAffects.TailWhip);
 				if(armorDef < 0) armorDef = 0;
@@ -330,12 +326,6 @@ use namespace kGAMECLASS;
 			if(findPerk(PerkLib.IronFists) >= 0 && str >= 50 && weaponName == "fists") {
 				attack += 5;
 			}
-			if(findPerk(PerkLib.IronFists2) >= 0 && str >= 65 && weaponName == "fists") {
-				attack += 5;
-			}
-			if(findPerk(PerkLib.IronFists3) >= 0 && str >= 80 && weaponName == "fists") {
-				attack += 5;
-			}			
 			if(findStatusAffect(StatusAffects.Berzerking) >= 0) attack += 30;
 			attack += statusAffectv1(StatusAffects.ChargeWeapon);
 			return attack;
@@ -365,6 +355,9 @@ use namespace kGAMECLASS;
 		}
 		override public function get jewelryValue():Number {
 			return _jewelry.value;
+		}
+		public function get jewelryKind():String {
+			return _jewelry.kind;
 		}
 		
 		//override public function get shields
@@ -1489,9 +1482,6 @@ use namespace kGAMECLASS;
 				sharkCounter++;
 			if (tailType == 7)
 				sharkCounter++;
-			//skin counting only if PC got any other shark traits
-			if (skinType == 0 && sharkCounter > 0)
-				sharkCounter++;
 			return sharkCounter;
 		}
 
@@ -1913,6 +1903,7 @@ use namespace kGAMECLASS;
 			if (upperGarment != UndergarmentLib.NOTHING) textArray.push(upperGarmentName);
 			if (lowerGarment != UndergarmentLib.NOTHING) textArray.push(lowerGarmentName);
 			if (textArray.length > 0) text = formatStringArray(textArray);
+			if (upperGarment == UndergarmentLib.NOTHING && lowerGarment == UndergarmentLib.NOTHING) text += " with nothing underneath ";
 			//Naked?
 			if (upperGarment == UndergarmentLib.NOTHING && lowerGarment == UndergarmentLib.NOTHING && armor == ArmorLib.NOTHING) text = nakedText;
 			return text;
@@ -2382,15 +2373,6 @@ use namespace kGAMECLASS;
 			if (harpyScore() >= 4) {
 				maxSpe += 15;
 				maxTou -= 10;
-			}
-			if (sirenScore() >= 4) {
-				maxStr += 5;
-				maxSpe += 20;
-				maxTou -= 5;
-			}
-			if (demonScore() >= 4) {
-				maxSpe += 5;
-				maxInt += 5;
 			}
 			if (rhinoScore() >= 4) {
 				maxStr += 15;

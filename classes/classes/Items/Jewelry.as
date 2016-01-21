@@ -13,13 +13,15 @@ package classes.Items
 		private var _effectMagnitude:Number;
 		private var _perk:String;
 		private var _name:String;
+		private var _kind:String;
 
-		public function Jewelry(id:String, shortName:String, name:String, longName:String, effectId:Number, effectMagnitude:Number, value:Number = 0, description:String = null, type:String = "", perk:String = "")
+		public function Jewelry(id:String, shortName:String, name:String, longName:String, effectId:Number, effectMagnitude:Number, value:Number = 0, description:String = null, kind:String = "", perk:String = "")
 		{
 			super(id, shortName, longName, value, description);
 			this._name = name;
 			this._effectId = effectId;
 			this._effectMagnitude = effectMagnitude;
+			this._kind = kind;
 			this._perk = perk;
 		}
 
@@ -30,6 +32,8 @@ package classes.Items
 		public function get perk():String { return _perk; }
 
 		public function get name():String { return _name; }
+		
+		public function get kind():String { return _kind; }
 		
 		override public function get description():String {
 			var desc:String = _description;

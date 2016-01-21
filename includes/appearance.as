@@ -58,10 +58,15 @@
 	//Height and race.
 	if (flags[kFLAGS.USE_METRICS] > 0) outputText("You are a " + Math.round(100 * (player.tallness * 2.54) / 100) + " centimetre tall " + player.maleFemaleHerm() + " " + race + ", with " + player.bodyType() + ".", false);
 	else outputText("You are a " + Math.floor(player.tallness / 12) + " foot " + player.tallness % 12 + " inch tall " + player.maleFemaleHerm() + " " + race + ", with " + player.bodyType() + ".", false);
-	
+	//Equips
 	outputText("  <b>You are currently " + (player.armorDescript() != "gear" ? "wearing your " + player.armorDescript() : "naked") + "" + " and using your " + player.weaponName + " as a weapon.</b>", false);
-	if (player.jewelryName != "nothing") 
-		outputText("<b> Girding one of your fingers is " + player.jewelryName + ".</b> ")
+	if(player.jewelryName != "nothing") {
+		if(player.jewelryKind == "Hat")
+			outputText("<b> Nestled comfortably upon your head");
+		else
+			outputText("<b> Girding one of your fingers");
+		outputText(" is your " + player.jewelryName + ".</b> ");
+	}
 	//Face
 	if(player.faceType == FACE_HUMAN || player.faceType == FACE_SHARK_TEETH || player.faceType == FACE_BUNNY || player.faceType == FACE_SPIDER_FANGS || player.faceType == FACE_FERRET_MASK) 
 	{
